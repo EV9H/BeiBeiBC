@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import os 
 from decouple import config
-
+import djongo
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -80,8 +80,13 @@ WSGI_APPLICATION = "bbwebapp.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "djongo",
+        "NAME": "bc-database",
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+            'host': 'mongodb+srv://admin:admin@bc-database.he1iq.mongodb.net/?retryWrites=true&w=majority'
+        }
+
     }
 }
 
@@ -120,3 +125,5 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+LOGIN_REDIRECT_URL = "/"
