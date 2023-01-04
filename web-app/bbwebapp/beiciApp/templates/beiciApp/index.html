@@ -1,0 +1,12 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'beiciApp/style.css' %}">
+
+<h2>
+    BEICI APP INDEX PAGE
+</h2>
+
+{% if username %}
+    <p>Welcome, user: <span id = "username">{{ username }}</span></p>
+{% else %}
+    <p>Please Log in</p>
+{% endif %}

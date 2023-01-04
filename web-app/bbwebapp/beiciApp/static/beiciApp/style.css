@@ -1,0 +1,11 @@
+h2 {
+    size: 40px; 
+    color: darkblue;
+}
+#username {
+    color: red;
+}
+p {
+    size: 20px;
+    color: darkcyan;
+}
